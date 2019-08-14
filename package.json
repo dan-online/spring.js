@@ -1,0 +1,52 @@
+{
+  "name": "qserver",
+  "port": 8080,
+  "version": "2.0.0",
+  "description": "The simple way to launch a quick web sever",
+  "main": "./index.js",
+  "author": "DanCodes <dan@dancodes.online>",
+  "repository": "https://github.com/MayorChano/NodeJS",
+  "keywords": [
+    "template",
+    "express",
+    "mongodb",
+    "mongoose",
+    "ejs",
+    "setup",
+    "quick",
+    "tests",
+    "easy",
+    "logging",
+    "node",
+    "javascript",
+    "js",
+    "npm",
+    "npm-scripts",
+    "npmjs"
+  ],
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "mocha test/test.js",
+    "dev": "node dev.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "chalk": "^2.4.2",
+    "cookie-parser": "^1.4.4",
+    "edit-json-file": "^1.2.1",
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "express-session": "^1.16.1",
+    "file-system": "^2.2.2",
+    "helmet": "^3.18.0",
+    "http-errors": "^1.7.2",
+    "inquirer": "^6.3.1",
+    "mongodb": "^3.2.6",
+    "mongoose": "^5.5.11",
+    "morgan": "^1.9.1",
+    "os-utils": "0.0.14",
+    "path": "^0.12.7"
+  },
+  "license": "MIT"
+}
