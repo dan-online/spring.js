@@ -6,7 +6,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:latest
+      - image: circleci/mongo:latest
     working_directory: ~/repo
 
     steps:
@@ -27,4 +28,5 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
+      - run: mkdir ./src/log; mongod --fork --logpath ./src/log
       - run: npm test
