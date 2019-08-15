@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./docs/logo.png" style="width:200px;">
+  <img src="./docs/logo.png" style="width:150px;">
   <h1 align="center">Spring.js
   <br><img align="center" src="https://circleci.com/gh/dan-online/Spring.js.svg?style=svg&circle-token=f474a522a9749f7c41056ba4c2f1044cc3f65bf3"></h1>
   <p align="center">Reducing your code from 1000 lines to 2 lines is sure to put a spring in your step!</p>
