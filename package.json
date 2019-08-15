@@ -1,7 +1,6 @@
 {
   "name": "spring.js",
-  "port": 8080,
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "The simple way to launch a quick web sever",
   "main": "./index.js",
   "author": "DanCodes <dan@dancodes.online>",
