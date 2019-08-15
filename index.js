@@ -79,7 +79,7 @@ class Q_Server {
         console.error(err);
       }
     }, options);
-    this.database = require("./src/server").database;
+    this.database = require("./src/server").db;
   }
 }
 

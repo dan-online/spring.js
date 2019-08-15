@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "start": "node ./index.js",
-    "test": "mocha test/test.js",
+    "test": "mocha test/test.js --timeout 10000 --exit",
     "dev": "node dev.js"
   },
   "dependencies": {
@@ -36,6 +36,8 @@
     "cookie-parser": "^1.4.4",
     "edit-json-file": "^1.2.1",
     "ejs": "^2.6.1",
+    "enmap": "3.x",
+    "enmap-mongo": "^2.0.2",
     "express": "^4.17.1",
     "express-session": "^1.16.1",
     "file-system": "^2.2.2",

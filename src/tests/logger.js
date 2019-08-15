@@ -34,6 +34,7 @@ function log(change, err) {
     process.stdout.write(
       `\n${config.name}-${config.version} listening on port ${config.port}\n`
     );
+    console.log("");
     if (process.env.TEST) process.emit("finished");
   }
 }

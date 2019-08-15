@@ -8,7 +8,7 @@ module.exports = function(options) {
   const logger = require("morgan");
   const helmet = require("helmet");
   const log = require("./tests/logger");
-  const database = require("./utils/handlers/database").start(options.mongo);
+  const database = require("./utils/handlers/database").start(options);
 
   const app = express();
   log("server");
@@ -50,6 +50,6 @@ module.exports = function(options) {
 
   log("routes");
   module.exports.app = app;
-  module.exports.db = database;
+  module.exports.db = require("./utils/handlers/database");
   return app;
 };
