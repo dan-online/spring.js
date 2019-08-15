@@ -29,6 +29,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: mongodb -v
-      - run: mkdir ./src/log; mongod --fork --logpath ./src/log
       - run: npm test
