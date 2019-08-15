@@ -7,6 +7,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
+      - image: circleci/mongo:latest
     working_directory: ~/repo
     services:
       - mongod
@@ -28,9 +29,5 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -;
-      - run: echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list;
-      - run: sudo apt-get update;
-      - run: sudo apt-get install -y mongodb-org
       - run: mkdir ./src/log; mongod --fork --logpath ./src/log
       - run: npm test
