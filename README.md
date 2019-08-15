@@ -2,6 +2,9 @@
    <img src="./docs/logo.png" style="width:200px;">
    <h1>Spring.js</h1>
    Reducing your code from 1000 lines to 2 lines is sure to put a spring in your step!
+
+By <a href="https://dancodes.online" target="_blank">DanCodes</a>
+
    <hr>
 </center>
 
@@ -24,7 +27,7 @@ const { app, database } = new SpringJS({ name: "test" });
   - [Public directory](#Public%20Directory)
 
 * [Express](#express)
-* [Enmap](#enmap)
+* [Database](#database)
 
 ## Startup
 
@@ -126,6 +129,22 @@ new SpringJS({
 });
 ```
 
+# Express
+
+You can access express via the module
+
+```js
+const app = require("spring.js").app;
+```
+
+# Database
+
+You can access the database via the module which is using enmap and enmap-mongo.
+
+```js
+const db = require("spring.js").database;
+```
+
 # License
 
 (The MIT License)
@@ -150,6 +169,10 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+```
+
+```
 
 ```
 
