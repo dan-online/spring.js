@@ -1,43 +1,132 @@
-[![image](./public/images/image.png)](https://dancodes.online)
+<center>
+   <img src="./docs/logo.png" style="width:200px;">
+   <h1>Spring.js</h1>
+   Reducing your code from 1000 lines to 2 lines is sure to put a spring in your step!
+   <hr>
+</center>
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/15025ce27628484fbe0ced9c837811ca)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MayorChano/NodeJS&amp;utm_campaign=Badge_Grade) [![CircleCI](https://circleci.com/gh/MayorChano/NodeJS.svg?style=svg)](https://circleci.com/gh/MayorChano/NodeJS)
+# Basic Use
 
-Description
+```js
+const SpringJS = require("./index");
+const { app, database } = new SpringJS({ name: "test" });
+```
 
-Links
+# Documentation
 
-# Setup
+- [Startup](#startup)
+  - [Options](#options)
+  - [Name](#name)
+  - [Port](#port)
+  - [Log](#log)
+  - [Mongo](#mongo)
+  - [Views directory](#Views%20Directory)
+  - [Public directory](#Public%20Directory)
 
-```npm run setup```
+* [Express](#express)
+* [Enmap](#enmap)
 
-```npm install```
+## Startup
 
-```npm start```
+```js
+new SpringJS({ name: "test" });
+```
 
-## Authors
-- [Dan](https://github.com/MayorChano)
+## Options
 
-## Features
+- [Name](#name)
+- [Port](#port)
+- [Log](#log)
+- [Mongo](#mongo)
+- [Views directory](#Views%20Directory)
+- [Public directory](#Public%20Directory)
 
-* 
+### Name
 
-## To Do's
+- Kind: String
+- Example: name: "test"
+- Description: This will be used just for logging purposes
 
-* 
+```js
+new SpringJS({ name: "test" });
+```
 
-## Installation
+### Port
 
-* 
+- Kind: Integer (0-65536)
+- Example: port: 8080
+- Description: What port to run the web server on
 
-## Local Development
+```js
+new SpringJS({
+  name: "test",
+  port: 8080
+});
+```
 
-* 
+### Log
 
-## To know
+- Kind: Boolean
+- Example: log: true
+- Description: Whether or not to log requests to the console
 
-* 
+```js
+new SpringJS({
+  name: "test",
+  port: 8080,
+  log: true
+});
+```
 
-## License
+### Mongo
+
+- Kind: String
+- Example: mongo: "mongodb://localhost:27017/"
+- Description: Mongo server to connect to for database
+
+```js
+new SpringJS({
+  name: "test",
+  port: 8080,
+  log: true,
+  mongo: "mongodb://localhost:27017/"
+});
+```
+
+### Views Directory
+
+- Kind: String
+- Example: viewsDir: "./test/views"
+- Description: The views directory
+
+```js
+new SpringJS({
+  name: "test",
+  port: 8080,
+  log: true,
+  mongo: "mongodb://localhost:27017/",
+  viewsDir: "./test/views"
+});
+```
+
+### Public Directory
+
+- Kind: String
+- Example: publicDir: "./test/views"
+- Description: The public directory for express
+
+```js
+new SpringJS({
+  name: "test",
+  port: 8080,
+  log: true,
+  mongo: "mongodb://localhost:27017/",
+  viewsDir: "./test/views",
+  publicDir: "./test/public"
+});
+```
+
+# License
 
 (The MIT License)
 
@@ -61,3 +150,7 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+```
+
+```
