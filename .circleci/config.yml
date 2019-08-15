@@ -8,7 +8,8 @@ jobs:
     docker:
       - image: circleci/node:latest
     working_directory: ~/repo
-
+    services:
+      - mongod
     steps:
       - checkout
 
@@ -27,6 +28,6 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: sudo apt-get install mongodb-clients; mongod -v;
+      - run: service mongod start;
       - run: mkdir ./src/log; mongod --fork --logpath ./src/log
       - run: npm test
