@@ -27,7 +27,7 @@
     "npmjs"
   ],
   "scripts": {
-    "test": "mocha test/test.js --timeout 10000 --exit",
+    "test": "mocha mocha/test.js --timeout 10000 --exit",
     "dev": "node dev.js"
   },
   "dependencies": {
