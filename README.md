@@ -1,12 +1,4 @@
-<center>
-   <img src="./docs/logo.png" style="width:200px;">
-   <h1>Spring.js</h1>
-   Reducing your code from 1000 lines to 2 lines is sure to put a spring in your step!
-
-By <a href="https://dancodes.online" target="_blank">DanCodes</a>
-
-   <hr>
-</center>
+<center><img src="./docs/logo.png" style="width:200px;"><h1>Spring.js</h1>Reducing your code from 1000 lines to 2 lines is sure to put a spring in your step!<br><br>By <a href="https://dancodes.online" target="_blank">DanCodes</a><hr></center>
 
 # Basic Use
 
