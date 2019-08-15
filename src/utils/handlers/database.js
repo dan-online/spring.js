@@ -5,7 +5,6 @@ module.exports.start = function(options) {
   const db = new Enmap({
     provider: new EnmapMongo({
       name: options.name,
-      dbName: options.name,
       url: options.mongo
     })
   });

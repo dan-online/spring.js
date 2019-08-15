@@ -5,17 +5,22 @@ const { log, warn } = require("./functions");
 
 /**
  * @description
- * Constructor to start the Q-Server
+ * Constructor to start the SpringJS
  *
  * @example
  * ```js
- *   new Q_Server({ name: "example" })
+ *   const SpringJS = require("spring.js");
+ *   new SpringJS({ name: "example" });
  * ```
  */
 
-class Q_Server {
+class SpringJS {
   constructor(options) {
-    log(chalk.bold.bgGreen.black(` Q-Server-${homeConfig.version} starting`));
+    log(
+      chalk.bold.bgGreen.black(
+        ` ${homeConfig.name}-${homeConfig.version} starting`
+      )
+    );
     if (typeof options != "object") {
       throw new TypeError("Expected object for constructor");
     }
@@ -24,7 +29,7 @@ class Q_Server {
     }
     if (!options.port || isNaN(parseInt(options.port))) {
       warn("No valid port provided, using 8080");
-      this.port = 8080;
+      options.port = 8080;
     }
     if (
       !options.mongo ||
@@ -34,17 +39,16 @@ class Q_Server {
       warn(
         "No valid mongo database url provided, using mongodb://localhost:27017/"
       );
-      this.mongo = "mongodb://localhost:27017/";
+      options.mongo = "mongodb://localhost:27017/";
     }
+    options.mongo = options.mongo.endsWith("/")
+      ? options.mongo + options.name
+      : options.mongo + "/" + options.name;
     if (options.socket && typeof options.socket != "boolean") {
       throw new TypeError("Value of Socket option needs to be a boolean");
     }
     if (options.log && typeof options.log != "boolean") {
       throw new TypeError("Value of log option needs to be a boolean");
-    }
-    if (!options.viewEngine || typeof options.viewEngine != "string") {
-      warn("No valid viewEngine provided, using ejs");
-      options.viewEngine = "ejs";
     }
     if (!options.viewsDir || typeof options.viewsDir != "string") {
       options.viewsDir = path.resolve(process.cwd().toString(), "views");
@@ -68,7 +72,8 @@ class Q_Server {
     this.base = process.cwd();
     this.package = require(this.base + "/package.json");
     this.app = require("express").Router();
-    module.exports.router = this.app;
+    this.options.version = this.package.version;
+    module.exports = this;
     require("./bin/www").start(function(err) {
       if (process.env.TEST || typeof options.exited == "function") {
         if (err) {
@@ -83,4 +88,4 @@ class Q_Server {
   }
 }
 
-module.exports = Q_Server;
+module.exports = SpringJS;

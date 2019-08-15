@@ -7,7 +7,7 @@ const logged = [
   { name: "Database", value: false }
 ];
 
-const config = require("../../package.json");
+const config = require("../../index").options;
 var errors = [];
 var test = false;
 var okOn = "Online";

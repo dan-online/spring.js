@@ -1,26 +1,26 @@
 module.exports = function(options) {
   const createError = require("http-errors");
   const express = require("express");
-  const path = require("path");
   const session = require("express-session");
   const bodyParser = require("body-parser");
   const cookieParser = require("cookie-parser");
   const logger = require("morgan");
   const helmet = require("helmet");
   const log = require("./tests/logger");
+  const MongoStore = require("connect-mongo")(session);
   const database = require("./utils/handlers/database").start(options);
 
   const app = express();
   log("server");
   // view engine setup
   app.set("views", options.viewsDir);
-  app.set("view engine", options.viewEngine);
 
   const cooky = {
     secret: "work hard",
     resave: true,
     expires: new Date() * 60 * 60 * 24 * 7,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: new MongoStore({ url: options.mongo })
   };
 
   app.set("trust proxy", 1);
@@ -31,7 +31,7 @@ module.exports = function(options) {
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(cookieParser());
   app.use(express.static(options.publicDir));
-  app.use(require("../index").router);
+  app.use(require("../index").app);
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {
     next(createError(404));

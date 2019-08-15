@@ -2,7 +2,6 @@
 module.exports.start = async function(cb, options) {
   const app = require("../src/server")(options);
   const http = require("http");
-  const config = require("../package.json");
   // Msg
   const log = require("../src/tests/logger");
   if (process.argv.find(x => x == "test")) {
