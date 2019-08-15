@@ -27,6 +27,6 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: sudo apt-get install mongodb-clients
+      - run: sudo apt-get install mongod
       - run: mkdir ./src/log; mongod --fork --logpath ./src/log
       - run: npm test
