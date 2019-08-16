@@ -4,7 +4,10 @@
   "description": "The simple way to launch a quick web server and spring straight into working",
   "main": "./index.js",
   "author": "DanCodes <dan@dancodes.online>",
-  "repository": "https://github.com/dan-online/spring.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": "git://github.com/dan-online/spring.js.git",
   "keywords": [
     "spring.js",
     "springjs",
