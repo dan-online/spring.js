@@ -85,6 +85,7 @@ class SpringJS {
       }
     }, options);
     this.database = require("./src/server").db;
+    this.socket = require("./bin/www").sio;
   }
 }
 

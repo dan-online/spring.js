@@ -11,6 +11,7 @@ module.exports = function(options) {
   const database = require("./utils/handlers/database").start(options);
 
   const app = express();
+
   log("server");
   // view engine setup
   app.set("views", options.viewsDir);
@@ -45,7 +46,7 @@ module.exports = function(options) {
 
     // render the error page
     res.status(err.status || 500);
-    res.render("error");
+    res.send(err.message);
   });
 
   log("routes");
