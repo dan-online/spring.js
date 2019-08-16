@@ -1,5 +1,5 @@
 # Table of contents
 
-* [Spring.js](README.md)
+* [Welcome](README.md)
 * [Startup](startup.md)
 

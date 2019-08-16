@@ -2,9 +2,7 @@
 description: Making launching nodejs servers quick and easy for any developer.
 ---
 
-# Spring.js
-
-
+# Welcome
 
 ![](.gitbook/assets/logo%20%281%29.png)
 
@@ -20,16 +18,16 @@ const { app, database } = new SpringJS({ name: "test" });
 
 ## Documentation
 
-- [Startup](startup.md)
-  - [Options](startup.md#options)
-  - [Name](startup.md#name)
-  - [Port](startup.md#port)
-  - [Log](startup.md#log)
-  - [Mongo](startup.md#mongo)
-  - [Views directory](startup.md#views-directory)
-  - [Public directory](startup.md#public-directory)
-- [Express](./#express)
-- [Database](./#database)
+* [Startup](startup.md)
+  * [Options](startup.md#options)
+  * [Name](startup.md#name)
+  * [Port](startup.md#port)
+  * [Log](startup.md#log)
+  * [Mongo](startup.md#mongo)
+  * [Views directory](startup.md#views-directory)
+  * [Public directory](startup.md#public-directory)
+* [Express](./#express)
+* [Database](./#database)
 
 ## Express
 
@@ -60,3 +58,4 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 &lt;/p&gt;
+
