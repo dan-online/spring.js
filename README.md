@@ -26,8 +26,8 @@ const { app, database } = new SpringJS({ name: "test" });
   * [Mongo](startup.md#mongo)
   * [Views directory](startup.md#views-directory)
   * [Public directory](startup.md#public-directory)
-* [Express](./#express)
-* [Database](./#database)
+* [Express](express.md)
+* [Database](database.md)
 
 ## License
 
