@@ -8,8 +8,8 @@ description: Making launching nodejs servers quick and easy for any developer.
 
 ## Spring.js
 
-![](https://circleci.com/gh/dan-online/spring.js.svg?style=svg&circle-token=f474a522a9749f7c41056ba4c2f1044cc3f65bf3) ![](https://david-dm.org/dan-online/spring.js.svg)   
-![](https://api.codacy.com/project/badge/Grade/d6edf679d05f4da183d94b9ffcfc5dff) 
+![](https://circleci.com/gh/dan-online/spring.js.svg?style=svg&circle-token=f474a522a9749f7c41056ba4c2f1044cc3f65bf3) ![](https://david-dm.org/dan-online/spring.js.svg)  
+![](https://api.codacy.com/project/badge/Grade/d6edf679d05f4da183d94b9ffcfc5dff) ![](https://img.shields.io/badge/Created%20by-DanCodes-1abc9c.svg)
 
 ## Basic Use
 
@@ -20,16 +20,16 @@ const { app, database } = new SpringJS({ name: "test" });
 
 ## Documentation
 
-* [Startup](startup.md)
-  * [Options](startup.md#options)
-  * [Name](startup.md#name)
-  * [Port](startup.md#port)
-  * [Log](startup.md#log)
-  * [Mongo](startup.md#mongo)
-  * [Views directory](startup.md#views-directory)
-  * [Public directory](startup.md#public-directory)
-* [Express](./#express)
-* [Database](./#database)
+- [Startup](startup.md)
+  - [Options](startup.md#options)
+  - [Name](startup.md#name)
+  - [Port](startup.md#port)
+  - [Log](startup.md#log)
+  - [Mongo](startup.md#mongo)
+  - [Views directory](startup.md#views-directory)
+  - [Public directory](startup.md#public-directory)
+- [Express](./#express)
+- [Database](./#database)
 
 ## Express
 
@@ -60,4 +60,3 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 &lt;/p&gt;
-
