@@ -1,4 +1,4 @@
-<img src="./docs/logo.png" width="200px">
+<img src="./logo.png" width="200px">
 
 # Spring.js
 
