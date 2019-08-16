@@ -16,6 +16,11 @@ const { log, warn } = require("./functions");
 
 class SpringJS {
   constructor(options) {
+    if (exports.started) {
+      throw new Error("Spring already initialized!");
+    } else {
+      exports.started = true;
+    }
     log(
       chalk.bold.bgGreen.black(
         ` ${homeConfig.name}-${homeConfig.version} starting`
@@ -86,7 +91,7 @@ class SpringJS {
     }, options);
     this.database = require("./src/server").db;
     this.socket = require("./bin/www").sio;
+    module.exports = this;
   }
 }
-
 module.exports = SpringJS;
