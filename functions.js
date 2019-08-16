@@ -17,9 +17,13 @@ function log(text, save, important, ok) {
   if (!text) {
     return last;
   } else {
-    if (!save) return (last = text);
+    if (!save) {
+      return (last = text);
+    }
   }
-  if (!last) return;
+  if (!last) {
+    return;
+  }
   if (important) {
     process.stdout.write("\n\n" + text + "\n\n");
   }
