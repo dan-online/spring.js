@@ -1,5 +1,7 @@
 <img src="./docs/logo.png" width="200px">
+
 # Spring.js
+
 <img src="https://circleci.com/gh/dan-online/Spring.js.svg?style=svg&circle-token=f474a522a9749f7c41056ba4c2f1044cc3f65bf3">
 Reducing your code from 1000 lines to 2 lines is sure to put a spring in your step!
 <br>
