@@ -6,12 +6,12 @@ new SpringJS({ name: "test" });
 
 ### Options
 
-* [Name](./#name)
-* [Port](./#port)
-* [Log](./#log)
-* [Mongo](./#mongo)
-* [Views directory](./#Views%20Directory)
-* [Public directory](./#Public%20Directory)
+* [Name](startup.md#name)
+* [Port](startup.md#port)
+* [Log](startup.md#log)
+* [Mongo](startup.md#mongo)
+* [Views directory](startup.md#views-directory)
+* [Public directory](startup.md#public-directory)
 
 #### Name
 
