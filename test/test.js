@@ -92,7 +92,7 @@ describe("SpringJS", function() {
       done();
     });
     console.log(process.platform);
-    process.platform != "darwin"
+    process.platform != "linux"
       ? opn("http://localhost:" + sjs.options.port + "/socket")
       : done(); // For circleci
   });
