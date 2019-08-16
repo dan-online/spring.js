@@ -1,8 +1,6 @@
----
-description: 'More information can be found here: https://enmap.evie.dev/v/3/'
----
-
 # Database
+
+All commands can be found here: [https://enmap.evie.dev/v/3/](https://enmap.evie.dev/v/3/)
 
 You can access the database through the module \(1\) or on startup in the constructor \(2\)
 
