@@ -12,7 +12,7 @@ description: Making launching nodejs servers quick and easy for any developer.
 ## Basic Use
 
 ```javascript
-const SpringJS = require("./index");
+const SpringJS = require("spring.js");
 const { app, database } = new SpringJS({ name: "test" });
 ```
 

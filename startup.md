@@ -1,6 +1,7 @@
 # Startup
 
 ```javascript
+const SpringJS = require("spring.js");
 new SpringJS({ name: "test" });
 ```
 

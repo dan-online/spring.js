@@ -14,5 +14,14 @@ const { database } new SpringJS({ name: "test" });
 We recommend for multiple files by starting up in a main file and accessing the database using the first method
 {% endhint %}
 
+## Example usage
 
+```javascript
+const SpringJS = require("spring.js");
+const { database } new SpringJS({ name: "test" });
+
+database.set("DanCodes", "Spring.js");
+
+console.log("DanCodes wrote " + database.get("DanCodes") + "!");
+```
 
