@@ -1,172 +1,63 @@
-<img src="./logo.png" width="200px">
+---
+description: Making launching nodejs servers quick and easy for any developer.
+---
 
-# Spring.js
+# Welcome to Spring.js
 
-<img src="https://circleci.com/gh/dan-online/spring.js.svg?style=svg&circle-token=f474a522a9749f7c41056ba4c2f1044cc3f65bf3"> <img src="https://david-dm.org/dan-online/spring.js.svg">
-<br><img src="https://api.codacy.com/project/badge/Grade/d6edf679d05f4da183d94b9ffcfc5dff"> <a href="https://dancodes.online" target="_blank"><img src="https://img.shields.io/badge/Created%20by-DanCodes-1abc9c.svg"></a>
+![](.gitbook/assets/logo%20%281%29.png)
 
-<hr>
+## Spring.js
 
-# Basic Use
+![](https://circleci.com/gh/dan-online/spring.js.svg?style=svg&circle-token=f474a522a9749f7c41056ba4c2f1044cc3f65bf3) ![](https://david-dm.org/dan-online/spring.js.svg)   
+![](https://api.codacy.com/project/badge/Grade/d6edf679d05f4da183d94b9ffcfc5dff) 
 
-```js
+## Basic Use
+
+```javascript
 const SpringJS = require("./index");
 const { app, database } = new SpringJS({ name: "test" });
 ```
 
-# Documentation
+## Documentation
 
-- [Startup](#startup)
-  - [Options](#options)
-  - [Name](#name)
-  - [Port](#port)
-  - [Log](#log)
-  - [Mongo](#mongo)
-  - [Views directory](#Views%20Directory)
-  - [Public directory](#Public%20Directory)
+* [Startup](startup.md)
+  * [Options](startup.md#options)
+  * [Name](startup.md#name)
+  * [Port](startup.md#port)
+  * [Log](startup.md#log)
+  * [Mongo](startup.md#mongo)
+  * [Views directory](startup.md#views-directory)
+  * [Public directory](startup.md#public-directory)
+* [Express](./#express)
+* [Database](./#database)
 
-* [Express](#express)
-* [Database](#database)
-
-## Startup
-
-```js
-new SpringJS({ name: "test" });
-```
-
-## Options
-
-- [Name](#name)
-- [Port](#port)
-- [Log](#log)
-- [Mongo](#mongo)
-- [Views directory](#Views%20Directory)
-- [Public directory](#Public%20Directory)
-
-### Name
-
-- Kind: String
-- Example: name: "test"
-- Description: This will be used just for logging purposes
-
-```js
-new SpringJS({ name: "test" });
-```
-
-### Port
-
-- Kind: Integer (0-65536)
-- Example: port: 8080
-- Description: What port to run the web server on
-
-```js
-new SpringJS({
-  name: "test",
-  port: 8080
-});
-```
-
-### Log
-
-- Kind: Boolean
-- Example: log: true
-- Description: Whether or not to log requests to the console
-
-```js
-new SpringJS({
-  name: "test",
-  port: 8080,
-  log: true
-});
-```
-
-### Mongo
-
-- Kind: String
-- Example: mongo: "mongodb://localhost:27017/"
-- Description: Mongo server to connect to for database
-
-```js
-new SpringJS({
-  name: "test",
-  port: 8080,
-  log: true,
-  mongo: "mongodb://localhost:27017/"
-});
-```
-
-### Views Directory
-
-- Kind: String
-- Example: viewsDir: "./test/views"
-- Description: The views directory
-
-```js
-new SpringJS({
-  name: "test",
-  port: 8080,
-  log: true,
-  mongo: "mongodb://localhost:27017/",
-  viewsDir: "./test/views"
-});
-```
-
-### Public Directory
-
-- Kind: String
-- Example: publicDir: "./test/views"
-- Description: The public directory for express
-
-```js
-new SpringJS({
-  name: "test",
-  port: 8080,
-  log: true,
-  mongo: "mongodb://localhost:27017/",
-  viewsDir: "./test/views",
-  publicDir: "./test/public"
-});
-```
-
-# Express
+## Express
 
 You can access express via the module
 
-```js
+```javascript
 const app = require("spring.js").app;
 ```
 
-# Database
+## Database
 
 You can access the database via the module which is using enmap and enmap-mongo.
 
-```js
+```javascript
 const db = require("spring.js").database;
 ```
 
-# License
+## License
 
-(The MIT License)
+\(The MIT License\)
 
-Copyright (c) 2019 DanCodes <dan@dancodes.online>
+Copyright \(c\) 2019 DanCodes [dan@dancodes.online](mailto:dan@dancodes.online)
 
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files \(the 'Software'\), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-</p>
+&lt;/p&gt;
+
