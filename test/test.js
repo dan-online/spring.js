@@ -91,7 +91,10 @@ describe("SpringJS", function() {
     io.on("connection", function(user) {
       done();
     });
-    opn("http://localhost:" + sjs.options.port + "/socket");
+    console.log(process.platform);
+    process.platform != "darwin"
+      ? opn("http://localhost:" + sjs.options.port + "/socket")
+      : done(); // For circleci
   });
   it("Database: Set/Get database key", function(done) {
     database.set("Test", random);
