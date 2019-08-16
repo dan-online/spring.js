@@ -91,7 +91,6 @@ describe("SpringJS", function() {
     io.on("connection", function(user) {
       done();
     });
-    console.log(process.platform);
     process.platform != "linux"
       ? opn("http://localhost:" + sjs.options.port + "/socket")
       : done(); // For circleci
