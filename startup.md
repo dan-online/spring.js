@@ -36,6 +36,10 @@ new SpringJS({
 });
 ```
 
+{% hint style="info" %}
+We suggest port 8080 for development but you are free to use any port number between 0 and 65536
+{% endhint %}
+
 #### Log
 
 * Kind: Boolean
@@ -50,11 +54,15 @@ new SpringJS({
 });
 ```
 
+{% hint style="success" %}
+Logging will show path of request, speed and status code sent
+{% endhint %}
+
 #### Mongo
 
 * Kind: String
 * Example: mongo: "mongodb://localhost:27017/"
-* Description: Mongo server to connect to for database
+* Description: Mongo server to connect to your database
 
 ```javascript
 new SpringJS({
@@ -64,6 +72,10 @@ new SpringJS({
   mongo: "mongodb://localhost:27017/"
 });
 ```
+
+{% hint style="warning" %}
+We use enmap and enmap-mongo for connecting and using your mongo database both of which work but are no longer supported.
+{% endhint %}
 
 #### Views Directory
 
@@ -80,6 +92,10 @@ new SpringJS({
   viewsDir: "./test/views"
 });
 ```
+
+{% hint style="info" %}
+We recommend this option only if you are setting a view engine like ejs or pug
+{% endhint %}
 
 #### Public Directory
 
