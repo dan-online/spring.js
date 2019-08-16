@@ -2,7 +2,8 @@
 
 # Spring.js
 
-<img src="https://circleci.com/gh/dan-online/spring.js.svg?style=svg&circle-token=f474a522a9749f7c41056ba4c2f1044cc3f65bf3"> <img src="https://david-dm.org/dan-online/spring.js.svg"> <img src="https://api.codacy.com/project/badge/Grade/d6edf679d05f4da183d94b9ffcfc5dff">
+<img src="https://circleci.com/gh/dan-online/spring.js.svg?style=svg&circle-token=f474a522a9749f7c41056ba4c2f1044cc3f65bf3"> <img src="https://david-dm.org/dan-online/spring.js.svg">
+<img src="https://api.codacy.com/project/badge/Grade/d6edf679d05f4da183d94b9ffcfc5dff"> <img src="https://img.shields.io/badge/Created%20by-DanCodes-1abc9c.svg">
 
 Reducing your code from 1000 lines to 2 lines is sure to put a spring in your step!
 <br>
