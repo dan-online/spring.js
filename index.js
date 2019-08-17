@@ -1,3 +1,5 @@
+process.env.NODE_ENV = "production";
+
 const chalk = require("chalk");
 const path = require("path");
 const homeConfig = require("./package.json");
