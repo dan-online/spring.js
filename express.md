@@ -1,5 +1,8 @@
 ---
-description: How to access the express server started by spring.js
+description: >-
+  We use express to start a web server and to control it. We also use body
+  parsing, cookie parsing and helmet to keep the server secure and functional so
+  you don't have to.
 ---
 
 # Express

@@ -41,3 +41,27 @@ app.get("/", function(req, res) {
 
 
 
+## Session
+
+```javascript
+const SpringJS = require("spring.js");
+const { app, database } = new SpringJS({
+  name: "advanced",
+  port: 8080,
+  log: true,
+  mongo: "mongodb://localhost:27017/",
+  viewsDir: "./views",
+  publicDir: "./public"
+});
+
+app.set("view engine", "ejs");
+app.use(function(req, res, next) {
+  req.session.username = "Tester";
+  next();
+});
+
+app.get("/", function(req, res) {
+  res.render("index", { name: req.session.username});
+});
+```
+

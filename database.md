@@ -1,3 +1,9 @@
+---
+description: >-
+  We use enmap to connect to your mongo database as it is fast and easy to use.
+  Because of deprecation we use enmap 3 and enmap-mongo.
+---
+
 # Database
 
 All commands can be found here: [https://enmap.evie.dev/v/3/](https://enmap.evie.dev/v/3/)
