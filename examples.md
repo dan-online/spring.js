@@ -3,7 +3,7 @@
 ## Advanced example
 
 ```javascript
-const SpringJS = require("./index");
+const SpringJS = require("spring.js");
 const { app, database } = new SpringJS({
   name: "advanced",
   port: 8080,
@@ -22,7 +22,7 @@ app.get("/", function(req, res) {
 ## EJS
 
 ```javascript
-const SpringJS = require("./index");
+const SpringJS = require("spring.js");
 const { app, database } = new SpringJS({
   name: "advanced",
   port: 8080,
