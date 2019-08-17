@@ -51,9 +51,6 @@ class SpringJS {
     options.mongo = options.mongo.endsWith("/")
       ? options.mongo + options.name
       : options.mongo + "/" + options.name;
-    if (options.socket && typeof options.socket != "boolean") {
-      throw new TypeError("Value of Socket option needs to be a boolean");
-    }
     if (options.log && typeof options.log != "boolean") {
       throw new TypeError("Value of log option needs to be a boolean");
     }
