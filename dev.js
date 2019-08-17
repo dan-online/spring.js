@@ -7,6 +7,7 @@ const { app } = new SpringJS({
   viewsDir: "./test/views",
   publicDir: "./test/public"
 });
+
 app.get("/test", function(req, res) {
   res.send("SpringJS is the best");
 });

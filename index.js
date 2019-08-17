@@ -76,7 +76,6 @@ class SpringJS {
     this.options = options;
     this.base = process.cwd();
     this.package = require(this.base + "/package.json");
-    this.app = require("express").Router();
     this.options.version = this.package.version;
     module.exports = this;
     require("./bin/www").start(function(err) {
@@ -90,6 +89,7 @@ class SpringJS {
       }
     }, options);
     this.database = require("./src/server").db;
+    this.app = require("./src/server").app;
     this.socket = require("./bin/www").sio;
     module.exports = this;
   }
