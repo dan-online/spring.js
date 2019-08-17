@@ -8,7 +8,7 @@ description: >-
 
 ![](.gitbook/assets/banner%20%282%29.png)
 
-![](https://circleci.com/gh/dan-online/spring.js.svg?style=svg&circle-token=f474a522a9749f7c41056ba4c2f1044cc3f65bf3) ![](https://david-dm.org/dan-online/spring.js.svg)  
+![](https://circleci.com/gh/dan-online/spring.js.svg?style=svg&circle-token=f474a522a9749f7c41056ba4c2f1044cc3f65bf3) ![](https://img.shields.io/badge/dependencies-up%20to%20date-lime.svg)  
 ![](https://api.codacy.com/project/badge/Grade/d6edf679d05f4da183d94b9ffcfc5dff) ![](https://img.shields.io/badge/Created%20by-DanCodes-1abc9c.svg)
 
 ## Basic Use
@@ -20,16 +20,16 @@ const { app, database } = new SpringJS({ name: "test" });
 
 ## Documentation
 
-* [Startup](startup.md)
-  * [Options](startup.md#options)
-  * [Name](startup.md#name)
-  * [Port](startup.md#port)
-  * [Log](startup.md#log)
-  * [Mongo](startup.md#mongo)
-  * [Views directory](startup.md#views-directory)
-  * [Public directory](startup.md#public-directory)
-* [Express](express.md)
-* [Database](database.md)
+- [Startup](startup.md)
+  - [Options](startup.md#options)
+  - [Name](startup.md#name)
+  - [Port](startup.md#port)
+  - [Log](startup.md#log)
+  - [Mongo](startup.md#mongo)
+  - [Views directory](startup.md#views-directory)
+  - [Public directory](startup.md#public-directory)
+- [Express](express.md)
+- [Database](database.md)
 
 ## License
 
@@ -42,6 +42,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-
