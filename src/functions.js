@@ -1,18 +1,18 @@
-const chalk = require('chalk');
+const chalk = require("chalk");
 
 let last;
 
 function warn(text) {
   process.stdout.clearLine();
   process.stdout.cursorTo(0);
-  console.log(`${chalk.black.bold.bgYellow('WARN')} ${chalk.yellow(text)}`);
+  console.log(`${chalk.black.bold.bgYellow("WARN")} ${chalk.yellow(text)}`);
 }
 
 function log(text, save, important, ok) {
   if (text != last || ok) {
     process.stdout.clearLine();
     process.stdout.cursorTo(0);
-    process.stdout.write(`${chalk.black.bgGreen.bold(' OK ')} ${text}\n`);
+    process.stdout.write(`${chalk.black.bgGreen.bold(" OK ")} ${text}\n`);
 
     return;
   }
@@ -20,7 +20,7 @@ function log(text, save, important, ok) {
     return last;
   }
   if (!save) {
-    return last = text;
+    return (last = text);
   }
 
   if (!last) {
@@ -33,5 +33,5 @@ function log(text, save, important, ok) {
 
 module.exports = {
   log,
-  warn,
+  warn
 };

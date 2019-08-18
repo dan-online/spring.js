@@ -1,10 +1,10 @@
-process.env.NODE_ENV = 'production';
+process.env.NODE_ENV = "production";
 
-const chalk = require('chalk');
-const path = require('path');
+const chalk = require("chalk");
+const path = require("path");
 
-const homeConfig = require(path.resolve(process.cwd(), 'package.json'));
-const { log, warn } = require('./functions');
+const homeConfig = require(path.resolve(process.cwd(), "package.json"));
+const { log, warn } = require("./functions");
 
 /**
  * @description
@@ -20,57 +20,60 @@ const { log, warn } = require('./functions');
 class SpringJS {
   constructor(options) {
     if (exports.started) {
-      throw new Error('Spring already initialized!');
+      throw new Error("Spring already initialized!");
     } else {
       exports.started = true;
     }
     log(
       chalk.bold.bgGreen.black(
-        ` ${homeConfig.name}-${homeConfig.version} starting`,
-      ),
+        ` ${homeConfig.name}-${homeConfig.version} starting`
+      )
     );
-    if (typeof options !== 'object') {
-      throw new TypeError('Expected object for constructor');
+    if (typeof options !== "object") {
+      throw new TypeError("Expected object for constructor");
     }
-    if (!options.name || typeof options.name !== 'string') {
-      throw new TypeError('Name is required and needs to be a string');
+    if (!options.name || typeof options.name !== "string") {
+      throw new TypeError("Name is required and needs to be a string");
+    }
+    if (options.routes && typeof options.routes !== "object") {
+      throw new TypeError("Routes need to be an array!");
     }
     if (!options.port || isNaN(parseInt(options.port))) {
-      warn('No valid port provided, using 8080');
+      warn("No valid port provided, using 8080");
       options.port = 8080;
     }
     if (
-      !options.mongo
-      || !options.mongo.startsWith('mongodb://')
-      || typeof options.mongo !== 'string'
+      !options.mongo ||
+      !options.mongo.startsWith("mongodb://") ||
+      typeof options.mongo !== "string"
     ) {
       warn(
-        'No valid mongo database url provided, using mongodb://localhost:27017/',
+        "No valid mongo database url provided, using mongodb://localhost:27017/"
       );
-      options.mongo = 'mongodb://localhost:27017/';
+      options.mongo = "mongodb://localhost:27017/";
     }
-    options.mongo = options.mongo.endsWith('/')
+    options.mongo = options.mongo.endsWith("/")
       ? options.mongo + options.name
       : `${options.mongo}/${options.name}`;
-    if (options.log && typeof options.log !== 'boolean') {
-      throw new TypeError('Value of log option needs to be a boolean');
+    if (options.log && typeof options.log !== "boolean") {
+      throw new TypeError("Value of log option needs to be a boolean");
     }
-    if (!options.viewsDir || typeof options.viewsDir !== 'string') {
-      options.viewsDir = path.resolve(process.cwd().toString(), 'views');
+    if (!options.viewsDir || typeof options.viewsDir !== "string") {
+      options.viewsDir = path.resolve(process.cwd().toString(), "views");
       warn(`No valid view directory provided, using ${options.viewsDir}`);
     } else {
       options.viewsDir = path.resolve(
         process.cwd().toString(),
-        options.viewsDir,
+        options.viewsDir
       );
     }
-    if (!options.publicDir || typeof options.publicDir !== 'string') {
-      options.publicDir = path.resolve(process.cwd().toString(), 'public');
+    if (!options.publicDir || typeof options.publicDir !== "string") {
+      options.publicDir = path.resolve(process.cwd().toString(), "public");
       warn(`No valid public directory provided, using ${options.publicDir}`);
     } else {
       options.publicDir = path.resolve(
         process.cwd().toString(),
-        options.publicDir,
+        options.publicDir
       );
     }
     this.options = options;
@@ -78,8 +81,8 @@ class SpringJS {
     this.package = require(`${this.base}/package.json`);
     this.options.version = this.package.version;
     module.exports = this;
-    require('./bin/www').start((err) => {
-      if (process.env.TEST || typeof options.exited === 'function') {
+    require("./bin/www").start(err => {
+      if (process.env.TEST || typeof options.exited === "function") {
         if (err) {
           throw err;
         }
@@ -88,9 +91,9 @@ class SpringJS {
         console.error(err);
       }
     }, options);
-    this.database = require('./main/server').db;
-    this.app = require('./main/server').app;
-    this.socket = require('./bin/www').sio;
+    this.database = require("./main/server").db;
+    this.app = require("./main/server").app;
+    this.socket = require("./bin/www").sio;
     module.exports = this;
   }
 }
