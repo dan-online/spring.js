@@ -55,6 +55,7 @@
     "morgan": "^1.9.1",
     "os-utils": "0.0.14",
     "path": "^0.12.7",
+    "prompts": "^2.2.1",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
