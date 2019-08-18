@@ -1,6 +1,6 @@
 {
   "name": "spring.js",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "The simple way to launch a quick web server and spring straight into working",
   "main": "./index.js",
   "author": "DanCodes <dan@dancodes.online>",
