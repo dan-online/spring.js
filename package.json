@@ -31,9 +31,9 @@
     "npmjs"
   ],
   "scripts": {
-    "test": "mocha ./src/test/test.js --exit --timeout 5000",
+    "test": "sudo mocha ./src/test/test.js --exit --timeout 5000",
     "dev": "node ./src/dev.js",
-    "build": "babel ./src -d ./lib --ignore socket.io.js; cp ./src/test/public/socket.io.js ./lib/test/public/"
+    "build": "sudo babel ./src -d ./lib --ignore socket.io.js; sudo cp ./src/test/public/socket.io.js ./lib/test/public/"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
