@@ -11,8 +11,7 @@ module.exports = function(options) {
   const database = require("./utils/handlers/database").start(options);
 
   const app = express();
-
-  
+   
   // view engine setup
   app.set("view engine", options.viewEngine);
   app.set("views", options.viewsDir);
@@ -40,7 +39,7 @@ module.exports = function(options) {
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(cookieParser());
   app.use(express.static(options.publicDir));
-  app.use(require("../index").app);
+  
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {
     next(createError(404));
