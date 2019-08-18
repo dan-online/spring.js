@@ -4,15 +4,8 @@ const { app } = new SpringJS({
   port: 8080,
   log: true,
   mongo: "mongodb://localhost:27017/",
-  viewsDir: "./test/views",
-  viewEngine: "ejs",
-  publicDir: "./test/public",
-  routes: [
-    {
-      route: "/hi",
-      file: "../route.js"
-    }
-  ]
+  viewsDir: __dirname + "/views",
+  publicDir: __dirname + "/public"
 });
 
 app.get("/test", function(req, res) {
