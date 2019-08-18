@@ -68,7 +68,7 @@ class SpringJS {
       );
     }
     if (!options.publicDir || typeof options.publicDir !== "string") {
-      options.publicDir = path.resolve(process.cwd().toString(), "public");
+      options.publicDir = path.resolve(process.cwd(), "public");
       warn(`No valid public directory provided, using ${options.publicDir}`);
     } else {
       options.publicDir = path.resolve(
