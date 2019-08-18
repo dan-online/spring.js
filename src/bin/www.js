@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 module.exports.start = async function(cb, options) {
-  const app = require("../src/server")(options);
+  const app = require("../main/server")(options);
   const http = require("http");
   // Msg
-  const log = require("../src/tests/logger");
+  const log = require("../main/tests/logger");
   if (process.argv.find(x => x == "test")) {
     log("test");
   }

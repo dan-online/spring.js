@@ -1,18 +1,33 @@
-var done = false;
+let done = false;
 const logged = [
-  { name: "Initialize", value: false },
-  { name: "Port", value: false },
-  { name: "Server", value: false },
-  { name: "Routes", value: false },
-  { name: "Database", value: false }
+  {
+    name: "Initialize",
+    value: false
+  },
+  {
+    name: "Port",
+    value: false
+  },
+  {
+    name: "Server",
+    value: false
+  },
+  {
+    name: "Routes",
+    value: false
+  },
+  {
+    name: "Database",
+    value: false
+  }
 ];
 
 const config = require("../../index").options;
-var errors = [];
-var test = false;
-var okOn = "Online";
-var errOff = "Starting";
-var date;
+
+const errors = [];
+let test = false;
+let date;
+
 if (process.argv.find(x => x === "test")) {
   test = true;
   okOn = "OK";
@@ -42,10 +57,13 @@ function log(change, err) {
 }
 
 if (test) {
-  logged.push({ name: "Syntax", value: false });
+  logged.push({
+    name: "Syntax",
+    value: false
+  });
   require("child_process").exec(
     'find .  -path ./node_modules -prune -o -path ./.history -prune -o -path ./data -prune -o -name "*.js" -exec node -c {} \\;',
-    function(err, out) {
+    (err, out) => {
       if (err) {
         log("syntax", err);
       } else {
