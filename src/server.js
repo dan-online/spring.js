@@ -4,15 +4,17 @@ module.exports = function(options) {
   const bodyParser = require("body-parser");
   const cookieParser = require("cookie-parser");
   const logger = require("morgan");
+  const { log, warn } = require("../functions");
   const helmet = require("helmet");
-  const log = require("./tests/logger");
+  //const log = require("./tests/logger");
   const MongoStore = require("connect-mongo")(session);
   const database = require("./utils/handlers/database").start(options);
 
   const app = express();
-  require("express").app = app;
-  log("server");
+
+  
   // view engine setup
+  app.set("view engine", options.viewEngine);
   app.set("views", options.viewsDir);
 
   const cooky = {
@@ -23,6 +25,13 @@ module.exports = function(options) {
     store: new MongoStore({ url: options.mongo })
   };
 
+  /** Assigns routers from the provided options */
+  for (let i = 0; i < options.routes.length; i++) {
+    log(`Configuring ${options.routes[i].route} router.`)
+    app.use(options.routes[i].route, require(options.routes[i].file));
+  }
+  log("All routes are ready.");
+  
   app.set("trust proxy", 1);
   app.use(helmet());
   app.use(session(cooky));
@@ -31,7 +40,22 @@ module.exports = function(options) {
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(cookieParser());
   app.use(express.static(options.publicDir));
-  //app.use(require("../index").app);
+  app.use(require("../index").app);
+  // catch 404 and forward to error handler
+  app.use(function(req, res, next) {
+    next(createError(404));
+  });
+
+  // error handler
+  app.use(function(err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get("env") === "development" ? err : {};
+
+    // render the error page
+    res.status(err.status || 500);
+    res.send(err.message);
+  });
 
   log("routes");
   module.exports.app = app;

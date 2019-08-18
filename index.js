@@ -24,8 +24,8 @@ class SpringJS {
       exports.started = true;
     }
     log(
-      chalk.bold.bgGreen.black(
-        ` ${homeConfig.name}-${homeConfig.version} starting`
+      chalk.bold.white(
+        `${homeConfig.name}-${homeConfig.version} is starting`
       )
     );
     if (typeof options != "object") {
@@ -51,6 +51,12 @@ class SpringJS {
     options.mongo = options.mongo.endsWith("/")
       ? options.mongo + options.name
       : options.mongo + "/" + options.name;
+    if (options.socket && typeof options.socket != "boolean") {
+      throw new TypeError("Value of Socket option needs to be a boolean");
+    }
+    if (options.routes && typeof options.routes == "object") {
+      this.routes = options.routes;
+    }
     if (options.log && typeof options.log != "boolean") {
       throw new TypeError("Value of log option needs to be a boolean");
     }
