@@ -1,5 +1,3 @@
-# Initial page
-
 ![](.gitbook/assets/logo%20%282%29.png)
 
 ## Spring.js
