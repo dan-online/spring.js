@@ -23,13 +23,6 @@ module.exports.start = async function(cb, options) {
   app.set("port", port);
   //Start server
   const server = http.createServer(app);
-  //Listening
-  server.listen(port);
-  server.on("error", onError);
-  server.on("listening", onListening);
-  const socket = require("socket.io");
-  module.exports.sio = socket(server);
-  //Event listeners
   function onError(error) {
     if (error.syscall !== "listen") {
       throw error;
@@ -55,6 +48,12 @@ module.exports.start = async function(cb, options) {
       typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
     log("port");
   }
+  //Listening
+  server.listen(port);
+  server.on("error", onError);
+  server.on("listening", onListening);
+  const socket = require("socket.io");
+  module.exports.sio = socket(server);
 
   //Error catching
   process.on("uncaughtException", err => {
