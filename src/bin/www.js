@@ -34,10 +34,8 @@ module.exports.start = async function(cb, options) {
     switch (error.code) {
       case "EACCES":
         throw new Error(bind + " requires elevated privileges");
-        break;
       case "EADDRINUSE":
         throw new Error(bind + " is already in use");
-        break;
       default:
         throw error;
     }
