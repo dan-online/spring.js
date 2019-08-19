@@ -29,4 +29,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: ls -l; npm test --only=dev
+      - run: npm config set -g production false; npm test
