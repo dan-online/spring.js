@@ -1,4 +1,5 @@
 let done = false;
+let okOn;
 const logged = [
   {
     name: "Initialize",
@@ -24,7 +25,6 @@ const logged = [
 
 const config = require("../../index").options;
 
-const errors = [];
 let test = false;
 let date;
 
