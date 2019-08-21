@@ -1,9 +1,11 @@
 const { log, error } = require("../utils/index");
 const prompts = require("prompts");
 const chalk = require("chalk");
+const fs = require("file-system");
+const path = require("path");
 var custom = {
-  location: "./springjs",
-  name: "spring.js-template",
+  location: "springjs",
+  name: "springjs-template",
   port: 8080,
   logging: true,
   mongo: "mongodb://localhost:27017/",
@@ -107,8 +109,53 @@ exports.run = function(args) {
       message: `Are you sure you would like to continue?`,
       choices: [{ title: "Yes", value: true }, { title: "No", value: false }]
     }).then(function(next) {
-      if (next.continue == 1)
+      if (next.continue === 1)
         return error({ message: "Spring.js init canceled :(" });
+      const location = path.resolve(process.cwd(), res.location);
+      fs.stat(location, function(err, stats) {
+        if (!err || stats) {
+          return error({
+            message:
+              "For safety reasons we do not overwrite existing directories, either delete " +
+              res.location +
+              " or choose a new directory name"
+          });
+        }
+        fs.mkdir(location, function(err) {
+          if (err) return error(err);
+          fs.mkdir(path.resolve(location, res.views), function(err) {
+            if (err) return error(err);
+            fs.mkdir(path.resolve(location, res.public), function(err) {
+              if (err) return error(err);
+              fs.writeFile(
+                path.resolve(location, res.name + ".js"),
+                `
+                const SpringJS = require("spring.js");
+                const { app } = new SpringJS({
+                  name: "${res.name}",
+                  port: ${res.port},
+                  log: ${res.logging},
+                  mongo: "${res.mongo}",
+                  viewsDir: "${path.resolve(location, res.views)}",
+                  publicDir: "${path.resolve(location, res.public)}"
+                });
+              `,
+                function(err) {
+                  if (err) return error(err);
+                  fs.writeFile(
+                    path.resolve(location, "package.json"),
+                    `{ "name": "${res.name}", "version": "1.0.0" }`,
+                    function(err) {
+                      if (err) return error(err);
+                      log("Init was finished!");
+                    }
+                  );
+                }
+              );
+            });
+          });
+        });
+      });
     });
   });
 };

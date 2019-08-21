@@ -3,7 +3,7 @@ process.env.NODE_ENV = "production";
 const chalk = require("chalk");
 const path = require("path");
 
-const homeConfig = require(path.resolve(process.cwd(), "package.json"));
+const homeConfig = require(path.resolve(__dirname, "../package.json"));
 const { log, warn } = require("./functions");
 
 /**
@@ -78,8 +78,6 @@ class SpringJS {
     }
     this.options = options;
     this.base = process.cwd();
-    this.package = require(`${this.base}/package.json`);
-    this.options.version = this.package.version;
     module.exports = this;
     require("./bin/www").start(err => {
       if (process.env.TEST || typeof options.exited === "function") {
