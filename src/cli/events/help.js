@@ -28,14 +28,8 @@ exports.run = function(args) {
                  88888X                   
                      8%                  `)
   );
-  log(chalk.bgHex("#29B120")(" Initiating "), "white");
-  prompts({
-    type: "text",
-    name: "meaning",
-    message: "What is the meaning of life?"
-  }).then(function(res) {});
 };
 module.exports.info = {
-  name: "init",
-  alias: ["start", "run"]
+  name: "help",
+  alias: ["helpp", "error"]
 };

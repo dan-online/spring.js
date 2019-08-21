@@ -1,13 +1,12 @@
 const chalk = require("chalk");
 
 function log(msg) {
-  console.log("spring: " + msg);
+  console.log("spring log: " + msg);
 }
-function err(error) {
-  console.error(`spring: Error: ${error.message}`);
-  throw err;
+function error(error) {
+  console.error(`spring err: ${chalk.red(error.message)}`);
 }
 module.exports = {
   log,
-  err
+  error
 };

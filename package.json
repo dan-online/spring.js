@@ -38,7 +38,8 @@
     "build": "sudo babel ./src -d ./lib --ignore socket.io.js; sudo cp ./src/test/public/socket.io.js ./lib/test/public/"
   },
   "bin": {
-    "spring": "./lib/cli/index.js"
+    "spring": "./lib/cli/index.js",
+    "spring-dev": "./src/cli/index.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
