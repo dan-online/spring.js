@@ -3,7 +3,7 @@
 ## Advanced example
 
 ```javascript
-const SpringJS = require("spring.js");
+const SpringJS = require("js-spring");
 const { app, database } = new SpringJS({
   name: "advanced",
   port: 8080,
@@ -22,7 +22,7 @@ app.get("/", function(req, res) {
 ## EJS
 
 ```javascript
-const SpringJS = require("spring.js");
+const SpringJS = require("js-spring");
 const { app, database } = new SpringJS({
   name: "advanced",
   port: 8080,
@@ -35,16 +35,14 @@ const { app, database } = new SpringJS({
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res) {
-  res.render("index", { time: new Date()});
+  res.render("index", { time: new Date() });
 });
 ```
-
-
 
 ## Session
 
 ```javascript
-const SpringJS = require("spring.js");
+const SpringJS = require("js-spring");
 const { app, database } = new SpringJS({
   name: "advanced",
   port: 8080,
@@ -61,7 +59,6 @@ app.use(function(req, res, next) {
 });
 
 app.get("/", function(req, res) {
-  res.render("index", { name: req.session.username});
+  res.render("index", { name: req.session.username });
 });
 ```
-

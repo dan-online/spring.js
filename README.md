@@ -13,17 +13,17 @@ description: >-
 
 ## Features
 
-* Mongo Database
-* Express connection
-* Production ready
-* Session
-* Helmet
-* Trust proxy
-* Logging
-* Body parsing
-* Cookie parsing
-* CLI
-* Optimised
+- Mongo Database
+- Express connection
+- Production ready
+- Session
+- Helmet
+- Trust proxy
+- Logging
+- Body parsing
+- Cookie parsing
+- CLI
+- Optimised
 
 ## Install
 
@@ -34,22 +34,22 @@ $ npm install -g --save spring.js
 ## Basic Use
 
 ```javascript
-const SpringJS = require("spring.js");
+const SpringJS = require("js-spring");
 const { app, database } = new SpringJS({ name: "test" });
 ```
 
 ## Documentation
 
-* [Startup](startup.md)
-  * [Options](startup.md#options)
-  * [Name](startup.md#name)
-  * [Port](startup.md#port)
-  * [Log](startup.md#log)
-  * [Mongo](startup.md#mongo)
-  * [Views directory](startup.md#views-directory)
-  * [Public directory](startup.md#public-directory)
-* [Express](express.md)
-* [Database](database.md)
+- [Startup](startup.md)
+  - [Options](startup.md#options)
+  - [Name](startup.md#name)
+  - [Port](startup.md#port)
+  - [Log](startup.md#log)
+  - [Mongo](startup.md#mongo)
+  - [Views directory](startup.md#views-directory)
+  - [Public directory](startup.md#public-directory)
+- [Express](express.md)
+- [Database](database.md)
 
 ## License
 
@@ -62,4 +62,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-

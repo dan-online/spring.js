@@ -12,7 +12,7 @@ You can access the database through the module \(1\) or on startup in the constr
 
 ```javascript
 // 1
-const database = require("spring.js").database;
+const database = require("js-spring").database;
 
 // 2
 const { database } new SpringJS({ name: "test" });
@@ -25,11 +25,10 @@ We recommend for multiple files by starting up in a main file and accessing the 
 ## Example usage
 
 ```javascript
-const SpringJS = require("spring.js");
+const SpringJS = require("js-spring");
 const { database } new SpringJS({ name: "test" });
 
 database.set("DanCodes", "Spring.js");
 
 console.log("DanCodes wrote " + database.get("DanCodes") + "!");
 ```
-
