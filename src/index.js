@@ -5,7 +5,7 @@ const path = require("path");
 
 const homeConfig = require(path.resolve(__dirname, "../package.json"));
 const { log, warn } = require("./functions");
-
+process.title = "spring.js";
 /**
  * @description
  * Constructor to start the SpringJS

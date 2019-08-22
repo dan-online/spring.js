@@ -8,7 +8,9 @@ const commands = new Enmap();
 var options = args.filter(a => a.startsWith("-"));
 var command = args.filter(a => !a.startsWith("-"));
 
-if (command.length < 1) command = ["help"];
+if (command.length < 1) {
+  command = ["help"];
+}
 
 process.title = "spring.js-cli";
 
