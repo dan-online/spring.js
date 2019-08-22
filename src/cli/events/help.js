@@ -28,6 +28,18 @@ exports.run = function(args) {
                  88888X                   
                      8%                  `)
   );
+  console.log(`
+  spring help
+
+    usage: spring <command>
+
+    description: Spring.js is a simple way to start a nodejs server, use this cli to initialize a project!
+
+    These are common Spring commands used in various situations:
+    
+        help       View the help screen + commands
+        init       Create a spring.js project ready to run and tailored to you
+`);
 };
 module.exports.info = {
   name: "help",
