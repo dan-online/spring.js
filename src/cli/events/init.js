@@ -136,7 +136,7 @@ exports.run = function(args) {
                 fs.writeFile(
                   path.resolve(location, "main.js"),
                   `
-                  const SpringJS = require("spring.js");
+                  const SpringJS = require("spring-node");
                   const { app } = new SpringJS({
                     name: "${res.name}",
                     port: ${res.port},
@@ -200,7 +200,7 @@ exports.run = function(args) {
             fs.writeFile(
               path.resolve(location, "main.js"),
               `
-                const SpringJS = require("spring.js");
+                const SpringJS = require("spring-node");
                 const { app } = new SpringJS({
                   name: "${res.name}",
                   port: ${res.port},

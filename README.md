@@ -8,7 +8,7 @@
 ## Basic Use
 
 ```javascript
-const SpringJS = require("spring.js");
+const SpringJS = require("spring-node");
 const { app, database } = new SpringJS({ name: "test" });
 ```
 

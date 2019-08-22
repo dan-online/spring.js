@@ -12,7 +12,7 @@ process.title = "spring.js";
  *
  * @example
  * ```js
- *   const SpringJS = require("spring.js");
+ *   const SpringJS = require("spring-node");
  *   new SpringJS({ name: "example" });
  * ```
  */
