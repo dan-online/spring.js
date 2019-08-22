@@ -21,7 +21,7 @@ module.exports = function(options) {
     resave: true,
     expires: new Date() * 60 * 60 * 24 * 7,
     saveUninitialized: true,
-    store: new MongoStore({ url: options.mongo })
+    store: options.mongo ? new MongoStore({ url: options.mongo }) : null
   };
 
   app.set("trust proxy", 1);

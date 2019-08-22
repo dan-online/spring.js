@@ -51,10 +51,11 @@ class SpringJS {
         "No valid mongo database url provided, database will not initialize"
       );
       options.mongo = null;
+    } else {
+      options.mongo = options.mongo.endsWith("/")
+        ? options.mongo + options.name
+        : `${options.mongo}/${options.name}`;
     }
-    options.mongo = options.mongo.endsWith("/")
-      ? options.mongo + options.name
-      : `${options.mongo}/${options.name}`;
     if (options.log && typeof options.log !== "boolean") {
       throw new TypeError("Value of log option needs to be a boolean");
     }

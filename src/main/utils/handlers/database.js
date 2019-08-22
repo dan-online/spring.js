@@ -1,15 +1,19 @@
 module.exports.start = function(options) {
   const log = require("../../tests/logger");
-  const Enmap = require("enmap");
-  const EnmapMongo = require("enmap-mongo");
-  const db = new Enmap({
-    provider: new EnmapMongo({
-      name: options.name,
-      url: options.mongo
-    })
-  });
-
-  db.defer.then(() => db.set("hello", "world") && log("database"));
+  if (options.mongo && options.mongo != "") {
+    const Enmap = require("enmap");
+    const EnmapMongo = require("enmap-mongo");
+    var db = new Enmap({
+      provider: new EnmapMongo({
+        name: options.name,
+        url: options.mongo
+      })
+    });
+    db.defer.then(() => db.set("hello", "world") && log("database"));
+  } else {
+    var db = {};
+    log("database");
+  }
   module.exports = db;
 
   return db;
