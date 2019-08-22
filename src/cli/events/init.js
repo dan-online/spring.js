@@ -53,28 +53,28 @@ exports.run = function(args) {
           type: "text",
           initial: custom.name,
           name: "name",
-          message: `Name:`
+          message: "Name:"
         },
         {
           type: "text",
           initial: custom.location,
           name: "location",
-          message: `Directory:`
+          message: "Directory:"
         },
         {
           type: "number",
           initial: custom.port,
           name: "port",
-          message: `Port:`,
+          message: "Port:",
           validate: value =>
             parseInt(value) <= 0 || parseInt(value) > 65536
-              ? `Port must be greater than 0 and less than 65536`
+              ? "Port must be greater than 0 and less than 65536"
               : true
         },
         {
           type: "select",
           name: "logging",
-          message: `Logging:`,
+          message: "Logging:",
           choices: [
             { title: "Yes", value: true },
             { title: "No", value: false }
@@ -84,25 +84,25 @@ exports.run = function(args) {
           type: "text",
           name: "mongo",
           initial: custom.mongo,
-          message: `Mongo URL:`,
+          message: "Mongo URL:",
           validate: value =>
-            !value.startsWith("mongodb://") ? `Must be valid mongodb url` : true
+            !value.startsWith("mongodb://") ? "Must be valid mongodb url" : true
         },
         {
           type: "text",
           name: "views",
           initial: custom.views,
-          message: `Views directory:`
+          message: "Views directory:"
         },
         {
           type: "text",
           name: "public",
           initial: custom.public,
-          message: `Public directory:`
+          message: "Public directory:"
         }
       ],
       {
-        onCancel: function() {
+        onCancel() {
           error({ message: "Spring.js init canceled :(" });
           process.exit(0);
         }
@@ -111,11 +111,12 @@ exports.run = function(args) {
       prompts({
         type: "select",
         name: "continue",
-        message: `Are you sure you would like to continue?`,
+        message: "Are you sure you would like to continue?",
         choices: [{ title: "Yes", value: true }, { title: "No", value: false }]
       }).then(function(next) {
-        if (next.continue === 1)
+        if (next.continue === 1) {
           return error({ message: "Spring.js init canceled :(" });
+        }
         const location = path.resolve(process.cwd(), res.location);
         fs.stat(location, function(err, stats) {
           if (!err || stats) {
@@ -146,7 +147,9 @@ exports.run = function(args) {
                   });
                   `,
                   function(err) {
-                    if (err) return error(err);
+                    if (err) {
+                      return error(err);
+                    }
                     fs.writeFile(
                       path.resolve(location, "package.json"),
                       `{ 
