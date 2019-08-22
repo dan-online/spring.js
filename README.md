@@ -14,6 +14,10 @@ const { app, database } = new SpringJS({ name: "test" });
 
 ## [Documentation](https://spring-js.gitbook.io)
 
+## Authors
+
+- DanCodes <dan@dancodes.online>
+
 ## License
 
 \(The MIT License\)
