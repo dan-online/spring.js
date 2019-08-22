@@ -82,6 +82,7 @@ class SpringJS {
     require("./bin/www").start(err => {
       if (process.env.TEST || typeof options.exited === "function") {
         if (err) {
+          console.error(err);
           throw err;
         }
         if (options.exited) {
