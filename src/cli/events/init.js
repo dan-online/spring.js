@@ -9,7 +9,7 @@ var custom = {
   name: "springjs-template",
   port: 8080,
   logging: true,
-  mongo: "mongodb://localhost:27017/",
+  mongo: "",
   views: "views",
   public: "public"
 };
@@ -83,10 +83,8 @@ exports.run = function(args) {
         {
           type: "text",
           name: "mongo",
-          initial: custom.mongo,
-          message: "Mongo URL:",
-          validate: value =>
-            !value.startsWith("mongodb://") ? "Must be valid mongodb url" : true
+          initial: "",
+          message: "Mongo URL:"
         },
         {
           type: "text",

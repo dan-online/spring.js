@@ -48,9 +48,9 @@ class SpringJS {
       typeof options.mongo !== "string"
     ) {
       warn(
-        "No valid mongo database url provided, using mongodb://localhost:27017/"
+        "No valid mongo database url provided, database will not initialize"
       );
-      options.mongo = "mongodb://localhost:27017/";
+      options.mongo = null;
     }
     options.mongo = options.mongo.endsWith("/")
       ? options.mongo + options.name
