@@ -168,7 +168,14 @@ exports.run = function(args) {
                     }`,
                       function(err) {
                         if (err) return error(err);
-                        log("Init was finished!");
+                        require("child_process").exec(
+                          "cd " +
+                            location +
+                            "; npm install --save -g js-spring",
+                          function() {
+                            log("Init was finished!");
+                          }
+                        );
                       }
                     );
                   }
