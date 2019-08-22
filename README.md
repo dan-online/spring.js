@@ -1,9 +1,9 @@
-![](.gitbook/assets/logo%20%282%29.png)
+# Spring.js
 
-## Spring.js
+![](.gitbook/assets/banner%20%282%29.png)
 
-![](https://circleci.com/gh/dan-online/spring.js.svg?style=svg&circle-token=f474a522a9749f7c41056ba4c2f1044cc3f65bf3) ![](https://david-dm.org/dan-online/spring.js.svg)  
-![](https://api.codacy.com/project/badge/Grade/d6edf679d05f4da183d94b9ffcfc5dff)
+![](https://circleci.com/gh/dan-online/spring.js.svg?style=svg&circle-token=f474a522a9749f7c41056ba4c2f1044cc3f65bf3) ![](https://img.shields.io/badge/dependencies-up%20to%20date-lime.svg)  
+![](https://api.codacy.com/project/badge/Grade/d6edf679d05f4da183d94b9ffcfc5dff) ![](https://img.shields.io/badge/Created%20by-DanCodes-1abc9c.svg)
 
 ## Basic Use
 
