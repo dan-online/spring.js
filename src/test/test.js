@@ -10,13 +10,13 @@ let server = {};
 let database = {};
 let io = {};
 
-describe("SpringJS", () => {
+describe("Spring.js", () => {
   it("Module: Construct server", done => {
     sjs = new SpringJS({
       name: "test",
       exited: done,
       log: false,
-      port: 8080,
+      port: 8000,
       mongo: "mongodb://localhost:27017/",
       viewsDir: `${__dirname}/views`,
       publicDir: `${__dirname}/public`
@@ -119,5 +119,56 @@ describe("SpringJS", () => {
     } else {
       done(new Error("Key is incorrect"));
     }
+  });
+});
+describe("SpringJS-cli", function() {
+  const run = require("child_process").exec;
+  it("Link", function(done) {
+    run("sudo npm link", function(err, stdout) {
+      if (err) {
+        done(err);
+      } else {
+        done();
+      }
+    });
+  });
+  it("Initialize", function(done) {
+    run("spring-dev init", function(err, stdout) {
+      if (err) {
+        done(err);
+      } else {
+        done();
+      }
+    });
+  });
+  it("Run", function(done) {
+    run(
+      "cd src/test/springjs; sudo npm i --save ../../../; npm start",
+      function(err) {
+        if (err) {
+          done(err);
+        } else {
+          done();
+        }
+      }
+    );
+  });
+  it("Delete", function(done) {
+    run("sudo rm -rf src/test/springjs", function(err) {
+      if (err) {
+        done(err);
+      } else {
+        done();
+      }
+    });
+  });
+  it("Unlink", function(done) {
+    run("sudo npm unlink", function(err, stdout) {
+      if (err) {
+        done(err);
+      } else {
+        done();
+      }
+    });
   });
 });

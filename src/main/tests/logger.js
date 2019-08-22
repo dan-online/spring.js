@@ -32,7 +32,7 @@ if (process.argv.find(x => x === "test")) {
   test = true;
   okOn = "OK";
 }
-process.stdout.clearLine();
+if (process.stdout.clearLine) process.stdout.clearLine();
 function log(change, err) {
   if (!date) {
     date = new Date();

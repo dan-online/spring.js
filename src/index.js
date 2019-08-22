@@ -84,7 +84,11 @@ class SpringJS {
         if (err) {
           throw err;
         }
-        options.exited();
+        if (options.exited) {
+          options.exited();
+        } else {
+          process.exit(0);
+        }
       } else {
         console.error(err);
       }
