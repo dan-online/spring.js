@@ -28,7 +28,7 @@ description: >-
 ## Install
 
 ```bash
-$ npm install -g --save spring.js
+$ npm install -g --save js-spring
 ```
 
 ## Basic Use
