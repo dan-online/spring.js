@@ -1,5 +1,5 @@
 {
-  "name": "node-spring",
+  "name": "js-spring",
   "version": "3.1.0",
   "description": "The simple way to launch a quick web server and spring straight into working",
   "main": "./lib/index.js",
