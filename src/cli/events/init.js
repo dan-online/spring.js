@@ -128,7 +128,7 @@ exports.run = function(args) {
             fs.mkdir(path.resolve(location, res.public), function(err) {
               if (err) return error(err);
               fs.writeFile(
-                path.resolve(location, res.name + ".js"),
+                path.resolve(location, "main.js"),
                 `
                 const SpringJS = require("spring.js");
                 const { app } = new SpringJS({
@@ -144,7 +144,20 @@ exports.run = function(args) {
                   if (err) return error(err);
                   fs.writeFile(
                     path.resolve(location, "package.json"),
-                    `{ "name": "${res.name}", "version": "1.0.0" }`,
+                    `{ 
+                      "name": "${res.name}", 
+                      "version": "1.0.0",
+                      "main": "./main.js",
+                      "scripts": {
+                        "start": "node ./main.js"
+                      },
+                      "author": "DanCodes <dan@dancodes.online>",
+                      "repository": "git://github.com/dan-online/spring.js.git",
+                      "bugs": {
+                        "url": "https://github.com/dan-online/spring.js/issues"
+                      },
+                      "license": "MIT"
+                    }`,
                     function(err) {
                       if (err) return error(err);
                       log("Init was finished!");
