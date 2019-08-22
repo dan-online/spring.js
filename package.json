@@ -35,7 +35,6 @@
     "test": "sudo mocha ./src/test/test.js --exit --timeout Infinity",
     "dev": "node ./src/dev.js",
     "prepublish": "npm run build",
-    "postinstall": "npm link",
     "build": "sudo babel ./src -d ./lib --ignore socket.io.js; sudo cp ./src/test/public/socket.io.js ./lib/test/public/"
   },
   "bin": {
