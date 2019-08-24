@@ -1,5 +1,8 @@
 ---
-description: Making launching nodejs servers quick and easy for any developer.
+description: >-
+  Meet Spring.js, the best way for nodejs developers to create projects fast.
+  Spring.js has easy documentation, lots of features and usability. Created by a
+  nodejs developer, DanCodes.
 ---
 
 # Welcome
