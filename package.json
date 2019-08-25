@@ -1,6 +1,6 @@
 {
   "name": "js-spring",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "The simple way to launch a quick web server and spring straight into working",
   "main": "./src/index.js",
   "author": "DanCodes <dan@dancodes.online>",
