@@ -23,10 +23,10 @@ module.exports = function(options) {
     saveUninitialized: true,
     store: options.mongo ? new MongoStore({ url: options.mongo }) : null
   };
-
+  app.session = session(cooky);
   app.set("trust proxy", 1);
   app.use(helmet());
-  app.use(session(cooky));
+  app.use(app.session);
   options.log ? app.use(logger("tiny")) : false;
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
