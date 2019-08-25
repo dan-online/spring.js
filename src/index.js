@@ -35,9 +35,6 @@ class SpringJS {
     if (!options.name || typeof options.name !== "string") {
       throw new TypeError("Name is required and needs to be a string");
     }
-    if (options.routes && typeof options.routes !== "object") {
-      throw new TypeError("Routes need to be an array!");
-    }
     if (!options.port || isNaN(parseInt(options.port))) {
       warn("No valid port provided, using 8080");
       options.port = 8080;
