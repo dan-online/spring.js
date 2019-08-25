@@ -3,4 +3,5 @@ node_modules
 package-lock.json
 .gitbook
 .circleci
+.github
 docs
