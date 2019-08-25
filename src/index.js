@@ -44,7 +44,7 @@ class SpringJS {
     }
     if (
       !options.mongo ||
-      !options.mongo.startsWith("mongodb://") ||
+      !options.mongo.startsWith("mongodb") ||
       typeof options.mongo !== "string"
     ) {
       warn(
