@@ -96,9 +96,9 @@ describe("Spring.js", () => {
     io.on("test", () => {
       done();
     });
-    process.platform != "linux"
+    process.platform == "darwin"
       ? opn(`http://localhost:${sjs.options.port}/socket`)
-      : done(); // For circleci
+      : done(); // For circleci and travis
   });
   it("Database: Set/Get database key", done => {
     database.set("Test", random);
