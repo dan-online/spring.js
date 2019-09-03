@@ -1,5 +1,5 @@
 const axios = require("axios");
-const opn = require("opn");
+const opn = require("open");
 
 const random = Math.random().toString();
 const SpringJS = require("../index");
