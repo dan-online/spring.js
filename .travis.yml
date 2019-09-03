@@ -4,4 +4,4 @@ cache: npm
 node_js:
   - 12
 before_script:
-  - sudo npm install --save-dev
+  - npm install --save-dev
