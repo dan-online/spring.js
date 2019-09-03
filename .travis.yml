@@ -6,4 +6,4 @@ node_js:
   - 12
 before_script:
   - npm install --save-dev
-  - mongod --logpath ./ --fork
+  - sleep 10
