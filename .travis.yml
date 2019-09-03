@@ -1,9 +1,6 @@
 os: windows
 language: node_js
-services:
-  - mongodb
 node_js:
   - 12
 before_script:
   - npm install --save-dev
-  - sleep 10

@@ -17,7 +17,7 @@ describe("Spring.js", () => {
       exited: done,
       log: false,
       port: 8000,
-      mongo: "mongodb://localhost:27017/",
+      mongo: process.platform != "win32" ? "mongodb://localhost:27017/" : null,
       viewsDir: `${__dirname}/views`,
       publicDir: `${__dirname}/public`
     });
