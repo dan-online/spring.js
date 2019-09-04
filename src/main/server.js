@@ -33,7 +33,11 @@ module.exports = function(options) {
   app.use(cookieParser());
   app.use(express.static(options.publicDir));
   // App.use(require("../index").app);
-
+if(options.routes) {
+  for (var i = 0; i < options.routes.length; i++) {
+    app.use(options.routes[i].url, options.routes[i].router)
+  }
+}
   log("routes");
   module.exports.app = app;
   module.exports.db = require("./utils/handlers/database");
