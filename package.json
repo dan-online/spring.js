@@ -32,10 +32,10 @@
     "npmjs"
   ],
   "scripts": {
-    "test": "sudo mocha ./src/test/test.js --exit --timeout Infinity",
+    "test": "mocha ./src/test/test.js --exit --timeout Infinity",
     "dev": "node ./src/dev.js",
-    "prepublish": "npm run build",
-    "build": "sudo babel ./src -d ./lib --ignore socket.io.js; sudo cp ./src/test/public/socket.io.js ./lib/test/public/; sudo cp -r ./src/test/views ./lib/test/views"
+    "start-release": "npm run start-build; npm publish",
+    "start-build": "sudo babel ./src -d ./lib --ignore socket.io.js; sudo cp ./src/test/public/socket.io.js ./lib/test/public/; sudo cp -r ./src/test/views ./lib/test/views"
   },
   "bin": {
     "spring": "./src/cli/index.js",
@@ -65,7 +65,7 @@
   "devDependencies": {
     "axios": "^0.19.0",
     "mocha": "^6.2.0",
-    "opn": "^6.0.0"
+    "open": "^6.4.0"
   },
   "license": "MIT"
 }
