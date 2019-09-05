@@ -1,6 +1,6 @@
 const axios = require("axios");
 const opn = require("opn");
-
+ 
 const random = Math.random().toString();
 const SpringJS = require("../index");
 
@@ -19,7 +19,13 @@ describe("Spring.js", () => {
       port: 8000,
       mongo: "mongodb://localhost:27017/",
       viewsDir: `${__dirname}/views`,
-      publicDir: `${__dirname}/public`
+      publicDir: `${__dirname}/public`,
+      routes: [
+        {
+          url:"/api",
+          router: require('./routes/api')
+        }
+      ]
     });
     server = sjs.app;
     database = sjs.database;
