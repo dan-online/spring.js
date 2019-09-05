@@ -95,6 +95,7 @@ class SpringJS {
     this.database = require("./main/server").db;
     this.app = require("./main/server").app;
     this.express = require("express");
+    this.router = this.express.Router();
     this.socket = require("./bin/www").sio;
     module.exports = this;
   }
