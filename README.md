@@ -8,7 +8,7 @@
 ## Install
 
 ```bash
-$ npm i -g js-spring
+$ npm i --save js-spring
 ```
 
 ## Basic Use
