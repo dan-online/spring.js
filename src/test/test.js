@@ -51,6 +51,20 @@ describe("Spring.js", () => {
         done(err);
       });
   });
+  it("Express: Test route", done => {
+    axios
+      .get(`http://localhost:${sjs.options.port}/api`)
+      .then(res => {
+        if (res.data == "It's working!") {
+          done(false);
+        } else {
+          done(new Error("API route failed"));
+        }
+      })
+      .catch(err => {
+        done(err);
+      });
+  });
   it("Express: Add post route", done => {
     server.post("/post", (req, res) => {
       res.send(random);
