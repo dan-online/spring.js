@@ -53,6 +53,10 @@ class SpringJS {
         ? options.mongo + options.name
         : `${options.mongo}/${options.name}`;
     }
+    if (options.routes && typeof options.routes !== "object") {
+      this.routes = null;
+      throw new TypeError("Router option must be an array");
+    }
     if (options.log && typeof options.log !== "boolean") {
       throw new TypeError("Value of log option needs to be a boolean");
     }
