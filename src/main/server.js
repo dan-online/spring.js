@@ -33,9 +33,17 @@ module.exports = function(options) {
   app.use(cookieParser());
   app.use(express.static(options.publicDir));
   // App.use(require("../index").app);
+
+function validRoute(router) {
+  if (router.get && router.post) {
+    return true;
+  }
+  return false;
+}
 if(options.routes) {
   for (var i = 0; i < options.routes.length; i++) {
-    app.use(options.routes[i].url, options.routes[i].router)
+    if (validRoute(options.routes[i]["router"])) app.use(options.routes[i].url, options.routes[i].router);
+    else throw new TypeError(`${options.routes[i].url} router is not a valid Router. `)
   }
 }
   log("routes");
