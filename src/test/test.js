@@ -2,17 +2,17 @@ const axios = require("axios");
 const opn = require("open");
 
 const random = Math.random().toString();
-const SpringJS = require("../index");
+const Spring = require("../index");
 
-process.env.TEST = true;
-let sjs = {};
+process.env.TEST = "true";
+let sjs = { app: {}, database: {}, socket: {} };
 let server = {};
 let database = {};
 let io = {};
 
 describe("Spring.js", () => {
   it("Module: Construct server", done => {
-    sjs = new SpringJS({
+    sjs = new Spring({
       name: "test",
       exited: done,
       log: false,

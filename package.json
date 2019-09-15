@@ -42,6 +42,13 @@
     "spring-dev": "./src/cli/index.js"
   },
   "dependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.5",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-runtime": "^6.26.0",
     "body-parser": "^1.19.0",
     "chalk": "^2.4.2",
     "connect-mongo": "^3.0.0",
@@ -55,12 +62,7 @@
     "morgan": "^1.9.1",
     "path": "^0.12.7",
     "prompts": "^2.2.1",
-    "socket.io": "^2.2.0",
-    "babel-loader": "^8.0.6",
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-runtime": "^6.26.0"
+    "socket.io": "^2.2.0"
   },
   "devDependencies": {
     "axios": "^0.19.0",
