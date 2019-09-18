@@ -1,5 +1,3 @@
-process.env.NODE_ENV = "production";
-
 const chalk = require("chalk");
 const path = require("path");
 
