@@ -85,28 +85,6 @@ We use enmap and enmap-mongo for connecting and using your mongo database both o
 * Example: routes: [{ url:'/', router: require('./api.js') }]
 * Description: For assigning routes to your application.
 
-```javascript
-new SpringJS({
-  name: "test",
-  port: 8080,
-  log: true,
-  routes: [
-    {
-     url:'/api',
-     router: require('./api.js')
-    },
-    {
-     url:'/api2',
-     router: require('./api2.js')
-    }
-  ],
-  mongo: "mongodb://localhost:27017/"
-});
-```
-
-{% hint style="info" %}
-This is an easier way to assign routes for your application.
-{% endhint %}
 
 ### Views Directory
 
