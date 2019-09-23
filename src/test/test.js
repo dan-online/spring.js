@@ -19,7 +19,13 @@ describe("Spring.js", () => {
       port: 8000,
       mongo: process.platform != "win32" ? "mongodb://localhost:27017/" : null,
       viewsDir: `${__dirname}/views`,
-      publicDir: `${__dirname}/public`
+      publicDir: `${__dirname}/public`,
+      routes: [
+        {
+          url:"/api",
+          router: require('./routes/api')
+        }
+      ]
     });
     server = sjs.app;
     database = sjs.database;
@@ -39,6 +45,20 @@ describe("Spring.js", () => {
           done(false);
         } else {
           done(new Error("Get route failed"));
+        }
+      })
+      .catch(err => {
+        done(err);
+      });
+  });
+  it("Express: Test route", done => {
+    axios
+      .get(`http://localhost:${sjs.options.port}/api`)
+      .then(res => {
+        if (res.data == "It's working!") {
+          done(false);
+        } else {
+          done(new Error("API route failed"));
         }
       })
       .catch(err => {
