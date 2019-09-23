@@ -32,6 +32,28 @@ module.exports = function(options) {
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(cookieParser());
   app.use(express.static(options.publicDir));
+  if (options.cdn) {
+    var CDN;
+    try {
+      let opt = Object.assign(
+        {
+          publicDir: options.publicDir,
+          viewsDir: options.viewsDir,
+          port: options.port
+        },
+        options.cdn
+      );
+      CDN = require("express-cdn")(app, opt);
+    } catch (err) {
+      console.error(
+        "CDN could not be initiated, please use the docs found here: https://www.npmjs.com/package/express-cdn"
+      );
+      throw err;
+    }
+
+    // Add the dynamic view helper
+    app.dynamicHelpers({ CDN: CDN });
+  }
   function validRoute(router) {
     if (router.get && router.post) {
       return true;

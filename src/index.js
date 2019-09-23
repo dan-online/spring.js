@@ -32,7 +32,7 @@ class SpringJS {
         "Expected object for constructor, please read docs: https://spring.js.org/startup"
       );
     }
-    if (options.cdn && options.cdn !== "object") {
+    if (options.cdn && typeof options.cdn !== "object") {
       throw new TypeError("Cdn mode requires an object");
     }
     if (!options.name || typeof options.name !== "string") {

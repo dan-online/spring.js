@@ -6,6 +6,7 @@ const { app } = new SpringJS({
   mongo: "mongodb://localhost:27017/",
   viewsDir: __dirname + "/views",
   publicDir: __dirname + "/public",
+  cdn: {},
   routes: [{ url: "/", router: require("./test/routes/api") }]
 });
 

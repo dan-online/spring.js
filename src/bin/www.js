@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 module.exports.start = async function(cb, options) {
-  const app = require("../main/server")(options);
+  var app;
+  try {
+    app = require("../main/server")(options);
+  } catch (err) {
+    cb(err);
+  }
   const http = require("http");
   // Msg
   const log = require("../main/tests/logger");
