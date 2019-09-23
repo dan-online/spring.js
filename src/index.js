@@ -54,6 +54,10 @@ class SpringJS {
         ? options.mongo + options.name
         : `${options.mongo}/${options.name}`;
     }
+    if (options.routes && typeof options.routes !== "object") {
+      this.routes = null;
+      throw new TypeError("Value of router option must be an array");
+    }
     if (options.log && typeof options.log !== "boolean") {
       throw new TypeError("Value of log option needs to be a boolean");
     }
@@ -96,6 +100,7 @@ class SpringJS {
     this.database = require("./main/server").db;
     this.app = require("./main/server").app;
     this.express = require("express");
+    this.router = this.express.Router();
     this.socket = require("./bin/www").sio;
     module.exports = this;
   }
