@@ -22,8 +22,8 @@ describe("Spring.js", () => {
       publicDir: `${__dirname}/public`,
       routes: [
         {
-          url:"/api",
-          router: require('./routes/api')
+          url: "/api",
+          router: require("./routes/api")
         }
       ]
     });
