@@ -11,6 +11,7 @@ new SpringJS({ name: "test" });
 * [Port](startup.md#port)
 * [Log](startup.md#log)
 * [Mongo](startup.md#mongo)
+* [Routes](startup.md#routes)
 * [Views directory](startup.md#views-directory)
 * [Public directory](startup.md#public-directory)
 
@@ -77,6 +78,31 @@ new SpringJS({
 {% hint style="warning" %}
 We use enmap and enmap-mongo for connecting and using your mongo database both of which work but are no longer supported.
 {% endhint %}
+
+### Routes
+
+* Kind: Array
+* Example: routes: [{ url:'/', router: require('./api.js') }]
+* Description: For assigning routes to your application.
+
+```javascript
+new SpringJS({
+  name: "test",
+  port: 8080,
+  log: true,
+  routes: [
+    {
+     url:'/api',
+     router: require('./api.js')
+    },
+    {
+     url:'/api2',
+     router: require('./api2.js')
+    }
+  ],
+  mongo: "mongodb://localhost:27017/"
+});
+```
 
 ### Views Directory
 
