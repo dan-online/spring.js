@@ -30,6 +30,9 @@ class SpringJS {
     if (typeof options !== "object") {
       throw new TypeError("Expected object for constructor");
     }
+    if (typeof options.cdn !== "boolean") {
+      throw new TypeError("CDN requires a boolean");
+    }
     if (!options.name || typeof options.name !== "string") {
       throw new TypeError("Name is required and needs to be a string");
     }
