@@ -50,9 +50,8 @@ module.exports = function(options) {
       );
       throw err;
     }
-
     // Add the dynamic view helper
-    app.dynamicHelpers({ CDN: CDN });
+    app.locals.CDN = CDN;
   }
   function validRoute(router) {
     if (router.get && router.post) {

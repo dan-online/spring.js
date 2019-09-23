@@ -6,7 +6,16 @@ const { app } = new SpringJS({
   mongo: "mongodb://localhost:27017/",
   viewsDir: __dirname + "/views",
   publicDir: __dirname + "/public",
-  cdn: {},
+  cdn: {
+    domain: "cdn.your-domain.com",
+    bucket: "bucket-name",
+    key: "amazon-s3-key",
+    secret: "amazon-s3-secret",
+    hostname: "localhost",
+    port: 1337,
+    ssl: false,
+    production: true
+  },
   routes: [{ url: "/", router: require("./test/routes/api") }]
 });
 
