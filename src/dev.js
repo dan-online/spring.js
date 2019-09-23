@@ -5,7 +5,8 @@ const { app } = new SpringJS({
   log: true,
   mongo: "mongodb://localhost:27017/",
   viewsDir: __dirname + "/views",
-  publicDir: __dirname + "/public"
+  publicDir: __dirname + "/public",
+  routes: [{ url: "/", router: require("./test/routes/api") }]
 });
 
 app.get("/test", function(req, res) {

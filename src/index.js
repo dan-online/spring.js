@@ -28,13 +28,22 @@ class SpringJS {
       )
     );
     if (typeof options !== "object") {
-      throw new TypeError("Expected object for constructor");
+      throw new TypeError(
+        "Expected object for constructor, please read docs: https://spring.js.org/startup"
+      );
+    }
+    if (options.cdn && options.cdn !== "object") {
+      throw new TypeError("Cdn mode requires an object");
     }
     if (!options.name || typeof options.name !== "string") {
-      throw new TypeError("Name is required and needs to be a string");
+      throw new TypeError(
+        "Name is required and needs to be a string, please read docs: https://spring.js.org/startup#name"
+      );
     }
     if (!options.port || isNaN(parseInt(options.port))) {
-      warn("No valid port provided, using 8080");
+      warn(
+        "No valid port provided, using 8080, in the future please read docs: https://spring.js.org/startup#port"
+      );
       options.port = 8080;
     }
     if (
@@ -43,7 +52,7 @@ class SpringJS {
       typeof options.mongo !== "string"
     ) {
       warn(
-        "No valid mongo database url provided, database will not initialize"
+        "No valid mongo database url provided, database will not initialize, in the future please read docs: https://spring.js.org/startup#mongo"
       );
       options.mongo = null;
     } else {
@@ -53,14 +62,20 @@ class SpringJS {
     }
     if (options.routes && typeof options.routes !== "object") {
       this.routes = null;
-      throw new TypeError("Value of router option must be an array");
+      throw new TypeError(
+        "Value of router option must be an array, please read docs: https://spring.js.org/startup#routes"
+      );
     }
     if (options.log && typeof options.log !== "boolean") {
-      throw new TypeError("Value of log option needs to be a boolean");
+      throw new TypeError(
+        "Value of log option needs to be a boolean, please read docs: https://spring.js.org/startup#log"
+      );
     }
     if (!options.viewsDir || typeof options.viewsDir !== "string") {
       options.viewsDir = path.resolve(process.cwd().toString(), "views");
-      warn(`No valid view directory provided, using ${options.viewsDir}`);
+      warn(
+        `No valid view directory provided, using ${options.viewsDir}, in the future please read docs: https://spring.js.org/startup#views-directory`
+      );
     } else {
       options.viewsDir = path.resolve(
         process.cwd().toString(),
@@ -69,7 +84,9 @@ class SpringJS {
     }
     if (!options.publicDir || typeof options.publicDir !== "string") {
       options.publicDir = path.resolve(process.cwd(), "public");
-      warn(`No valid public directory provided, using ${options.publicDir}`);
+      warn(
+        `No valid public directory provided, using ${options.publicDir}, in the future please read docs: https://spring.js.org/startup#public-directory`
+      );
     } else {
       options.publicDir = path.resolve(
         process.cwd().toString(),
