@@ -37,11 +37,15 @@ module.exports = function(options) {
       return true;
     }
     return false;
-  };
-  if(options.routes) {
+  }
+  if (options.routes) {
     for (var i = 0; i < options.routes.length; i++) {
-      if (validRoute(options.routes[i]["router"])) app.use(options.routes[i].url, options.routes[i].router);
-      else throw new TypeError(`${options.routes[i].url} router is not a valid Router.`);
+      if (validRoute(options.routes[i]["router"]))
+        app.use(options.routes[i].url, options.routes[i].router);
+      else
+        throw new TypeError(
+          `${options.routes[i].url} router is not a valid Router.`
+        );
     }
   }
   log("routes");
