@@ -1,7 +1,7 @@
 {
-  "version": "3.2.0",
+  "version": "3.2.3",
   "state": "stable",
-  "scope": "major feature",
-  "changes": "Publishing Spring.js",
+  "scope": "minor feature",
+  "changes": "Adding routes feature",
   "download": "https://npmjs.com/package/js-spring"
 }
