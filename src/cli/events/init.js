@@ -151,25 +151,30 @@ exports.run = function(args) {
                     fs.writeFile(
                       path.resolve(location, "package.json"),
                       `{ 
-                      "name": "${res.name}", 
-                      "version": "1.0.0",
-                      "main": "./main.js",
-                      "scripts": {
-                        "start": "node ./main.js"
-                      },
-                      "author": "DanCodes <dan@dancodes.online>",
-                      "repository": "git://github.com/dan-online/spring.js.git",
-                      "bugs": {
-                        "url": "https://github.com/dan-online/spring.js/issues"
-                      },
-                      "license": "MIT"
-                    }`,
+                        "name": "${res.name}", 
+                        "version": "1.0.0",
+                        "main": "./main.js",
+                        "scripts": {
+                          "start": "node ./main.js"
+                        },
+                        "author": "DanCodes <dan@dancodes.online>",
+                        "repository": "git://github.com/dan-online/spring.js.git",
+                        "bugs": {
+                          "url": "https://github.com/dan-online/spring.js/issues"
+                        },
+                        "dependencies": {
+                          "js-spring": "^${
+                            require("../../../package.json").version
+                          }"
+                        },
+                        "license": "MIT"
+                      }`,
                       function(err) {
                         if (err) return error(err);
                         require("child_process").exec(
                           "cd " +
                             location +
-                            "; npm install --save -g js-spring",
+                            "; npm install --save js-spring",
                           function() {
                             log("Init was finished!");
                           }
@@ -204,17 +209,15 @@ exports.run = function(args) {
             if (err) return error(err);
             fs.writeFile(
               path.resolve(location, "main.js"),
-              `
-                const SpringJS = require("js-spring");
-                const { app } = new SpringJS({
+              `const SpringJS = require("js-spring");
+               const { app } = new SpringJS({
                   name: "${res.name}",
                   port: ${res.port},
                   log: ${res.logging},
                   mongo: "${res.mongo}",
                   viewsDir: "${path.resolve(location, res.views)}",
                   publicDir: "${path.resolve(location, res.public)}"
-                });
-              `,
+                });`,
               function(err) {
                 if (err) return error(err);
                 fs.writeFile(
@@ -230,6 +233,9 @@ exports.run = function(args) {
                       "repository": "git://github.com/dan-online/spring.js.git",
                       "bugs": {
                         "url": "https://github.com/dan-online/spring.js/issues"
+                      },
+                      "dependencies": {
+                        "js-spring": "^${require("../../../package.json").version}"
                       },
                       "license": "MIT"
                     }`,

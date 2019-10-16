@@ -38,7 +38,7 @@
     "start-build": "sudo babel ./src -d ./lib --ignore socket.io.js; sudo cp ./src/test/public/socket.io.js ./lib/test/public/; sudo cp -r ./src/test/views ./lib/test/views"
   },
   "bin": {
-    "spring": "./src/cli/index.js",
+    "spring": "./lib/cli/index.js",
     "spring-dev": "./src/cli/index.js"
   },
   "dependencies": {
