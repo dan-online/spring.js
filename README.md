@@ -19,7 +19,7 @@ const SpringJS = require("js-spring");
 const { app, database } = new SpringJS({ name: "test" });
 ```
 
-## Click [here](https://spring-js.gitbook.io) for documentation!
+## Click [here](https://spring.js.org) for documentation!
 
 ## Authors
 
