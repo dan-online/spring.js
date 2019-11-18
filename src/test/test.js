@@ -165,16 +165,13 @@ if (process.platform == "darwin") {
       });
     });
     it("Run", function(done) {
-      run(
-        "cd src/test/springjs; sudo npm i --save ../../../; npm start",
-        function(err) {
-          if (err) {
-            done(err);
-          } else {
-            done();
-          }
+      run("cd src/test/springjs; sudo npm i --save; npm start", function(err) {
+        if (err) {
+          done(err);
+        } else {
+          done();
         }
-      );
+      });
     });
     it("Delete", function(done) {
       run("sudo rm -rf src/test/springjs", function(err) {
