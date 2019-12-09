@@ -2,7 +2,6 @@ const chalk = require("chalk");
 const path = require("path");
 
 const homeConfig = require(path.resolve(__dirname, "../package.json"));
-const { log, warn } = require("./functions");
 process.title = "spring.js";
 /**
  * @description
@@ -17,6 +16,7 @@ process.title = "spring.js";
 
 class SpringJS {
   constructor(options) {
+    const { log, warn } = require("./functions")(options);
     if (exports.started) {
       throw new Error("Spring already initialized!");
     } else {

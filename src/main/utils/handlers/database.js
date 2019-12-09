@@ -1,6 +1,6 @@
 module.exports.start = function(options) {
   const log = require("../../tests/logger");
-  if (options.mongo && options.mongo != "") {
+  if (options.mongo && options.mongo != "" && !options.forceNulldb) {
     const Enmap = require("enmap");
     const EnmapMongo = require("enmap-mongo");
     var db = new Enmap({

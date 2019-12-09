@@ -33,7 +33,6 @@ if (process.argv.find(x => x === "test")) {
 }
 if (process.stdout.clearLine) process.stdout.clearLine();
 function log(change, err) {
-  if (!config.internalLog) return;
   if (!date) {
     date = new Date();
   }
@@ -46,7 +45,10 @@ function log(change, err) {
 
   if (logged.filter(x => x.value === false).length === 0 && !done) {
     done = true;
-    process.stdout.write(`\n${config.name} listening on port ${config.port}\n`);
+    if (config.internalLog || config.internalLog == undefined)
+      process.stdout.write(
+        `\n${config.name} listening on port ${config.port}\n`
+      );
     console.log("");
     if (process.env.TEST) {
       process.emit("finished");
