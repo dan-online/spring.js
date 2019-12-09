@@ -14,8 +14,8 @@ describe("Spring.js", () => {
   it("Module: Construct server", done => {
     sjs = new SpringJS({
       name: "test",
+      internalLog: true,
       exited: done,
-      log: false,
       port: 8000,
       mongo: process.platform != "win32" ? "mongodb://localhost:27017/" : null,
       viewsDir: `${__dirname}/views`,

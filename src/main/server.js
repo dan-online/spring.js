@@ -27,7 +27,7 @@ module.exports = function(options) {
   app.set("trust proxy", 1);
   app.use(helmet());
   app.use(app.session);
-  options.log ? app.use(logger("tiny")) : false;
+  options.expressLog ? app.use(logger("tiny")) : false;
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(cookieParser());

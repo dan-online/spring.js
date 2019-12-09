@@ -22,11 +22,6 @@ class SpringJS {
     } else {
       exports.started = true;
     }
-    log(
-      chalk.bold.bgGreen.black(
-        ` ${homeConfig.name}-${homeConfig.version} starting`
-      )
-    );
     if (typeof options !== "object") {
       throw new TypeError("Expected object for constructor");
     }
@@ -55,9 +50,17 @@ class SpringJS {
       this.routes = null;
       throw new TypeError("Value of router option must be an array");
     }
-    if (options.log && typeof options.log !== "boolean") {
-      throw new TypeError("Value of log option needs to be a boolean");
+    if (options.expressLog && typeof options.expressLog !== "boolean") {
+      throw new TypeError("Value of express-log option needs to be a boolean");
     }
+    if (options.internalLog && typeof options.internalLog !== "boolean") {
+      throw new TypeError("Value of internal-log option needs to be a boolean");
+    }
+    log(
+      chalk.bold.bgGreen.black(
+        ` ${homeConfig.name}-${homeConfig.version} starting`
+      )
+    );
     if (!options.viewsDir || typeof options.viewsDir !== "string") {
       options.viewsDir = path.resolve(process.cwd().toString(), "views");
       warn(`No valid view directory provided, using ${options.viewsDir}`);

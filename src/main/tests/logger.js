@@ -1,5 +1,4 @@
 let done = false;
-let okOn;
 const logged = [
   {
     name: "Initialize",
@@ -34,6 +33,7 @@ if (process.argv.find(x => x === "test")) {
 }
 if (process.stdout.clearLine) process.stdout.clearLine();
 function log(change, err) {
+  if (!config.internalLog) return;
   if (!date) {
     date = new Date();
   }
